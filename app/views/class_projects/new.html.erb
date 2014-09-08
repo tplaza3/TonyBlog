@@ -1,0 +1,24 @@
+<h1>New Project</h1>
+
+<% @class_project.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form_for @class_project do |p| %>
+
+  <%= p.label :name %>
+  <%= p.text_field :name %>
+
+  <%= p.label :category %>
+  <%= p.text_field :category %>
+
+  <%= p.submit %>
+
+<% end %>
+
+
+
+
+
+
+
