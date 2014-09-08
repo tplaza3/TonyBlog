@@ -11,3 +11,23 @@
  *= require_self
  *= require_tree .
  */
+
+.fancy_image_background{
+
+  background: url("...public/images/lightwater.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	padding: 25px 0 375px 0;
+	margin: 0 75px 0 75px;
+}
+
+.fancy_image{
+	
+	
+	
+}
+.fancy_link{
+	
+	
+	
+}
