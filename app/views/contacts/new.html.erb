@@ -1,0 +1,27 @@
+<h1>New Contact</h1>
+
+<% @contact.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form_for @contact do |p| %>
+
+  <%= p.label :name %>
+  <%= p.text_field :name %>
+
+  <%= p.label :email %>
+  <%= p.text_field :email %>
+	
+  <%= p.label :message %>
+  <%= p.text_field :message %>
+	
+  <%= p.submit %>
+
+<% end %>
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+<h1>Edit <%=@contact.name %></h1>
+
+<%= form_for @contact do |p| %>
+
+  <%= p.label :name %>
+  <%= p.text_field :name %>
+
+  <%= p.label :email %>
+  <%= p.text_field :email %>
+	
+  <%= p.label :message %>
+  <%= p.text_field :message %>
+	
+  <%= p.submit %>
+
+<% end %>
+
+
+<!-- <p>Do you want to delete <%=@contact.name %> from your class projects? Click below</p>
+
+<form action = "/class_projects/<%=@contact.id%>/delete" method = "post">
+  <input type = "submit" value = "Delete forever!">
+</form> -->

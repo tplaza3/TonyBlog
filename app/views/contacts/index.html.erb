@@ -1,0 +1,11 @@
+<h1>Contacts</h1>
+
+<% @contacts.each do |c|%>
+
+	<p><%= link_to(c.name, contact_path(c.id)) %></p>
+<%end%>
+
+<%= link_to("New Contact", new_contact_path) %>
+
+
+
