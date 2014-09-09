@@ -3,10 +3,6 @@ class ClassProjectsController < ApplicationController
     @class_projects = ClassProject.all
   end
   
-  def show
-    @class_project = ClassProject.find(params[:id])
-  
-  end
   
   def new
     @class_project = ClassProject.new
@@ -30,6 +26,33 @@ class ClassProjectsController < ApplicationController
     end
   end
   
+  
+  def edit
+    @class_project = ClassProject.find(params[:id])
+  end
+  
+  def update
+    @class_projects = ClassProject.all
+    @class_project = ClassProject.find(params[:id])
+    @class_project.update_attributes(params[:class_project])
+    # @class_project.save
+    render "index"
+    
+  end
+  
+  
+  
+  def delete
+    ClassProject.find(params[:id]).delete
+    redirect_to class_projects_path
+    
+  end
+  
+  def show
+    @class_project = ClassProject.find(params[:id])
+    
+  
+  end
   
   
   

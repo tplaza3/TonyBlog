@@ -1,0 +1,29 @@
+<h1>Edit <%=@class_project.name %></h1>
+
+<p>	
+	<%= form_for :class_project do |p| %>
+
+	  <%= p.label :name %>
+	  <%= p.text_field :name %>
+
+	  <%= p.label :category %>
+	  <%= p.text_field :category %>
+
+	  <%= p.submit %>
+
+	<% end %>
+</p>
+
+<p>Do you want to delete <%=@class_project.name %> from your class project? Click below</p>
+
+<form action = "/class_projects/<%=@class_project.id%>/delete" method = "post">
+  <input type = "submit" value = "Delete forever!">
+</form>
+		
+
+
+
+
+
+
+
