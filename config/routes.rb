@@ -11,6 +11,5 @@ TonyBlog::Application.routes.draw do
   post "class_projects" => 'class_projects#create' 
   put "class_projects/:id" => 'class_projects#update'
 
-  
   get "class_projects/:id/delete" => 'class_projects#delete'
 end
