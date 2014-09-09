@@ -2,8 +2,7 @@ class ClassProjectsController < ApplicationController
   def index
     @class_projects = ClassProject.all
   end
-  
-  
+    
   def new
     @class_project = ClassProject.new
   end
@@ -25,8 +24,7 @@ class ClassProjectsController < ApplicationController
       render "new" # Refers to /app/views/users/new
     end
   end
-  
-  
+    
   def edit
     @class_project = ClassProject.find(params[:id])
   end
@@ -34,21 +32,17 @@ class ClassProjectsController < ApplicationController
   def update
     @class_projects = ClassProject.all
     @class_project = ClassProject.find(params[:id])
-      if @class_project.update_attributes(params[:class_project])
-        redirect_to class_projects_path
-      else
-      end
-    # @class_project.save
-    # render "index"
     
-  end
-  
-  
+    if @class_project.update_attributes(params[:class_project])
+      redirect_to class_projects_path
+    else
+    end
+    
+  end  
   
   def delete
     ClassProject.find(params[:id]).delete
     redirect_to class_projects_path
-    
   end
   
   def show
