@@ -34,9 +34,12 @@ class ClassProjectsController < ApplicationController
   def update
     @class_projects = ClassProject.all
     @class_project = ClassProject.find(params[:id])
-    @class_project.update_attributes(params[:class_project])
+      if @class_project.update_attributes(params[:class_project])
+        redirect_to class_projects_path
+      else
+      end
     # @class_project.save
-    render "index"
+    # render "index"
     
   end
   
@@ -50,8 +53,6 @@ class ClassProjectsController < ApplicationController
   
   def show
     @class_project = ClassProject.find(params[:id])
-    
-  
   end
   
   
