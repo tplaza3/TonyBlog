@@ -1,0 +1,27 @@
+<h1>New Article</h1>
+
+<% @article.errors.full_messages.each do |msg| %>
+  <p><%= msg %></p>
+<% end %>
+
+<%= form_for @article do |a| %>
+
+  <%= a.label :title %>
+  <%= a.text_field :title %>
+
+  <%= a.label :body %>
+  <%= a.text_field :body %>
+	
+  <%= a.label :draft %>
+  <%= a.check_box :draft %>
+	
+  <%= a.submit %>
+
+<% end %>
+
+
+
+
+
+
+

@@ -23,15 +23,26 @@ TonyBlog::Application.routes.draw do
   get "contacts/:id" => 'contacts#show', :as => "contact"
   get "contacts/:id/edit" => 'contacts#edit', :as => "edit_contact"
   
-  put "contacts/:id" => 'contacts#update'
   post "contacts" => 'contacts#create' 
+  put "contacts/:id" => 'contacts#update'
+
+  get "contacts/:id/delete" => 'contacts#delete'
   
+#------------------------------------------------------------------------------------------------------------------------------
+
+  get "articles" => 'articles#index', :as => "articles"
+  get "articles/new" => 'articles#new', :as => "new_article"
+
+  get "articles/:id" => 'articles#show', :as => "article"
+  get "articles/:id/edit" => 'articles#edit', :as => "edit_article"
+
+  post "articles" => 'articles#create' 
+  put "articles/:id" => 'articles#update'
+
+  get "articles/:id/delete" => 'articles#delete'
+
   
-  
-  
-  
-  
-  
+    
   
   
 end
