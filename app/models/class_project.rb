@@ -1,5 +1,5 @@
 class ClassProject < ActiveRecord::Base
-  attr_accessible :category, :name
+  attr_accessible :category, :featured, :name
   
   validates :name, :presence => true
   validates :category, :presence => true
