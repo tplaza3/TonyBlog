@@ -22,7 +22,7 @@ class Article < ActiveRecord::Base
       return "short"
     elsif char > 50 && char <=100
       return "medium"
-    elsif char > 100 && char <=100
+    elsif char > 100 && char <=300
       return "long"
     else
       return "not sure what is goin on!"
