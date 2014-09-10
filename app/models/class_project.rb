@@ -4,6 +4,6 @@ class ClassProject < ActiveRecord::Base
   validates :name, :presence => true
   validates :category, :presence => true
   
-  scope :f_article
+  scope :is_featured, where(:featured => true)
   
 end

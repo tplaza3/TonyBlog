@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
   validates :body, :presence => true
   validates :draft, :presence => true
   
+  
+  scope :is_draft, where(:draft => true)
+  
   # add an instance method called excerpt, which returns only the first 30 characters of the article's body.
   
   def excerpt(id)
@@ -27,5 +30,10 @@ class Article < ActiveRecord::Base
     else
       return "not sure what is goin on!"
     end
+  end
+  
+  def convert_to_finished
+      # Notice it's "update_attribute" - not "update_attributes" (sssss).
+    update_attribute(:draft, false)
   end
 end
