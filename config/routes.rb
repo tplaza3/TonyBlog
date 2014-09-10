@@ -1,5 +1,5 @@
 TonyBlog::Application.routes.draw do
-  get "welcome" => 'pages#welcome', :as => "welcome"
+  root :to => 'pages#welcome' #homepage
   get "profile" => 'pages#profile', :as => "profile"
   
 #------------------------------------------------------------------------------------------------------------------------------

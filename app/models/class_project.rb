@@ -3,4 +3,7 @@ class ClassProject < ActiveRecord::Base
   
   validates :name, :presence => true
   validates :category, :presence => true
+  
+  scope :f_article
+  
 end
