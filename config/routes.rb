@@ -1,5 +1,5 @@
 TonyBlog::Application.routes.draw do
-  root :to => 'pages#welcome' #homepage
+  root :to => 'pages#welcome' #homepages
   get "profile" => 'pages#profile', :as => "profile"
   
 #------------------------------------------------------------------------------------------------------------------------------
@@ -40,7 +40,17 @@ TonyBlog::Application.routes.draw do
   put "articles/:id" => 'articles#update'
 
   get "articles/:id/delete" => 'articles#delete'
-
+  post "articles/like" => 'articles#like', :as => "like_article"
+  
+#------------------------------------------------------------------------------------------------------------------------------
+  
+  
+  post "create_user" => 'users#create', :as => "create_user"
+  get "signup" => 'users#new', :as => "signup"
+  
+  get "login" => 'logins#new', :as => "login"
+  post "login" => 'logins#create', :as => "create_login"
+  
   
     
   

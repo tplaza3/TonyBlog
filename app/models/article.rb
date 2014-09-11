@@ -1,5 +1,6 @@
 class Article < ActiveRecord::Base
   attr_accessible :body, :draft, :title
+  has_many :likes
   
   validates :title, :presence => true
   validates :body, :presence => true

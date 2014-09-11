@@ -27,7 +27,17 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     
+  end
   
+  def like
+    # @article = Article.find(params[:id])
+#     # @like = Like.new
+
+    @article = Article.find(params[:id])
+     
+    Like.create({"article_id" => @article.id, "ip_address" => "tony"})
+    redirect_to articles_path
+    
   end
   
   def update

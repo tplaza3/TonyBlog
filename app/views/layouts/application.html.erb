@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+	<% if current_user %>
+	  Logged in!
+	<% else %>
+	  NOT logged in!
+	<% end %>
+	
+<p><%= session %></p>
+
+<p>Your IP address is: <%= request.remote_ip %></p>
 
 <%= yield %>
 
