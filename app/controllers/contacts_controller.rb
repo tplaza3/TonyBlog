@@ -1,4 +1,7 @@
 class ContactsController < ApplicationController
+  
+  skip_before_filter :authorize, :only => [:index, :show]
+  
   def index
     @contacts = Contact.all
   end
@@ -11,6 +14,7 @@ class ContactsController < ApplicationController
   
   def create
     @contact = Contact.new(params[:contact])
+    
     if @contact.save
       redirect_to contacts_path
     else
@@ -24,17 +28,16 @@ class ContactsController < ApplicationController
   
   def edit
     @contact = Contact.find(params[:id])
-    
-  
   end
   
   def update
     @contacts = Contact.all
     @contact = Contact.find(params[:id])
+    
       if @contact.update_attributes(params[:contact])
         redirect_to contacts_path
       else
-      end 
+      end  
   end
 
 

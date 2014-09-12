@@ -5,15 +5,15 @@ TonyBlog::Application.routes.draw do
 #------------------------------------------------------------------------------------------------------------------------------
   
   get "class_projects" => 'class_projects#index', :as => "class_projects"
-  get "class_projects/:id" => 'class_projects#show', :as => "class_project"
-  
   get "class_projects/new" => 'class_projects#new', :as => "new_class_project"
+  
+  get "class_projects/:id" => 'class_projects#show', :as => "class_project"
   get "class_projects/:id/edit" => 'class_projects#edit', :as => "edit_class_project"
   
   post "class_projects" => 'class_projects#create' 
   put "class_projects/:id" => 'class_projects#update'
 
-  get "class_projects/:id/delete" => 'class_projects#delete'
+
   
 #------------------------------------------------------------------------------------------------------------------------------
   
@@ -26,7 +26,7 @@ TonyBlog::Application.routes.draw do
   post "contacts" => 'contacts#create' 
   put "contacts/:id" => 'contacts#update'
 
-  get "contacts/:id/delete" => 'contacts#delete'
+
   
 #------------------------------------------------------------------------------------------------------------------------------
 
@@ -38,10 +38,10 @@ TonyBlog::Application.routes.draw do
 
   post "articles" => 'articles#create' 
   put "articles/:id" => 'articles#update'
-
-  get "articles/:id/delete" => 'articles#delete'
-  post "articles/like" => 'articles#like', :as => "like_article"
   
+  delete "articles/:id/delete" => 'articles#destroy', :as => "delete_article"
+  post "articles/like" => 'articles#like', :as => "like_article"
+  #:article_id
 #------------------------------------------------------------------------------------------------------------------------------
   
   
@@ -50,6 +50,8 @@ TonyBlog::Application.routes.draw do
   
   get "login" => 'logins#new', :as => "login"
   post "login" => 'logins#create', :as => "create_login"
+  
+  get "logout" => 'logins#destroy', :as => "logout"
   
   
     

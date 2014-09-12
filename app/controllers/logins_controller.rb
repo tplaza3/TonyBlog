@@ -1,4 +1,6 @@
 class LoginsController < ApplicationController
+  skip_before_filter :authorize, :only => [:new, :create]
+  
   def new
   end
   
@@ -12,4 +14,10 @@ class LoginsController < ApplicationController
       raise "Invalid login."
     end
   end
+  
+  def destroy
+    session[:user_id] = nil # Could also call `reset_session` to clear the entire session.
+    redirect_to articles_path
+  end 
+  
 end

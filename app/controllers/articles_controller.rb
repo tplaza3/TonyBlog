@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  
+  skip_before_filter :authorize, :only => [:index, :show]
+  
   def index
     @articles = Article.all
   end
@@ -49,6 +52,13 @@ class ArticlesController < ApplicationController
     else
     end 
     
+  end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    
+    redirect_to articles_path
   end
     
   
