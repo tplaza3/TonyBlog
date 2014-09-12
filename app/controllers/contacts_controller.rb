@@ -39,6 +39,13 @@ class ContactsController < ApplicationController
       else
       end  
   end
+  
+  def destroy
+    @contact = Contact.find(params[:id])
+    @contact.destroy
+    
+    redirect_to contacts_path
+  end
 
 
 

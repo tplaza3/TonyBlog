@@ -43,8 +43,10 @@ class ClassProjectsController < ApplicationController
     
   end  
   
-  def delete
-    ClassProject.find(params[:id]).delete
+  def destroy
+    @class_project = ClassProject.find(params[:id])
+    @class_project.destroy
+    
     redirect_to class_projects_path
   end
   

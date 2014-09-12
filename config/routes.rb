@@ -12,6 +12,8 @@ TonyBlog::Application.routes.draw do
   
   post "class_projects" => 'class_projects#create' 
   put "class_projects/:id" => 'class_projects#update'
+  
+  delete "class_projects/:id/delete" => 'class_projects#destroy', :as => "delete_class_project"
 
 
   
@@ -25,6 +27,8 @@ TonyBlog::Application.routes.draw do
   
   post "contacts" => 'contacts#create' 
   put "contacts/:id" => 'contacts#update'
+  
+  delete "contacts/:id/delete" => 'contacts#destroy', :as => "delete_contact"
 
 
   
