@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     
     if @article.save
-      redirect_to articles_path
+      redirect_to articles_path, :notice => "Saved a new article! You feel that? That's a pat on the back!"
     else
       render "new"
     end
