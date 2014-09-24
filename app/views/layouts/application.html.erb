@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>TonyBlog</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "global", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
@@ -23,14 +23,32 @@
 	<p><%= flash[:notice]%></p>
 	<%end%>
 	
-	<div class ="fancy_image_background">
-		<div id ="main_inner">
-				<div id="container">
-					<body>
-						<%= yield %>
-					</body>
-				</div>	
+	
+	<header>
+		<div id="links">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Projects</a></li>
+				<li><a href="#">Contacts</a></li>
+				<li><a href="#">Portfolio</a></li>
+			</ul>
 		</div>
+		<div class="logo">
+			<h1>!TONY PLAZA!<h1>
+		</div>
+	</header>
+	
+	<div id ="container">
+		<div class="fancy_background">
+			<body>
+				<%= yield %>
+			</body>
+		</div>	
+	</div>
+		
+	<footer>
+		<p>Copyright Tony Plaza</p>
+	</footer>
 
 
 </body>

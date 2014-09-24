@@ -1,12 +1,59 @@
 
 
-.fancy_image_background{
+header{
+	background-size: 100%;
+	background: red;
+	padding: 10px 10px 10px 0;
+  
+}
 
-  background: blue;
+header li{
+	padding: 30px 0 0 0;
+  display: inline-block;
+	font-family: 'Georgia'
+	
+}
+
+#container{
+	
+	background: url("/images/lightwater.jpg");
+	text-align: center;
+	background-size: 100%;  
+
+}
+
+#links{
+  float: right;
+}
+
+.logo{
+	text-align: left;
+	padding: 0 0 0 0;
+}
+
+
+h1{
+	font-family: 'Gentona-Book';
+	font-weight: normal;
+	font-style: normal;
+	text-transform: uppercase;
+	color: #040441;
+	letter-spacing: 2px;
+	font-size: 48px;
+	text-align: left;
+}
+
+.fancy_background{
+	background-color: #fff;
+	background-color: rgba(255,255,255,0.5);
 	background-size: 100%;
 	background-repeat: no-repeat;
 	padding: 25px 0 375px 0;
 	margin: 0 75px 0 75px;
+}
+
+.fancy_background h1{
+	text-align: center;
 }
 
 .fancy_image{
@@ -15,6 +62,18 @@
 	
 }
 .fancy_link{
+	
+	
+	
+}
+
+footer{
+	clear: both;
+	text-transform: uppercase;
+	text-align: center;
+	background: blue;
+	padding: 20px 20px;
+	
 	
 	
 	
